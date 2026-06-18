@@ -5,6 +5,8 @@ import { useAuthStore } from "../store/authStore";
 import TestForm from "../components/Tests/TestForm";
 import TestResult from "../components/Tests/TestResult";
 
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 export default function TestPage() {
     const { id } = useParams();
     const { currentTest, fetchTestById, submitTest } = useTestStore();
@@ -32,7 +34,7 @@ export default function TestPage() {
         const checkIfPassed = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const res = await fetch(`https://web-production-00a19.up.railway.app/api/tests/my-results`, {
+                const res = await fetch(`${API}/tests/my-results`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 const results = await res.json();
