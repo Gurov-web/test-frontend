@@ -25,7 +25,7 @@ export default function ResultsSection({ results, loading }) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-5">
+    <div className="grid sm:grid-cols-2 gap-5">
       {results.map((result) => (
         <ResultCard key={result.id} result={result} />
       ))}

@@ -6,14 +6,14 @@ export default function AuthButtons({ onClickLink }) {
       <Link
         to="/login"
         onClick={onClickLink}
-        className="text-gray hover:text-white text-sm md:text-base"
+        className="py-3 md:py-4 bg-[#A0FFB910] text-primary flex gap-2.5 items-center justify-center border border-primary rounded-md hover:bg-[#A0FFB930] duration-200 text-sm md:text-base"
       >
         Войти
       </Link>
       <Link
         to="/register"
         onClick={onClickLink}
-        className="py-2.5 px-5 rounded-md bg-primary text-[#1A1C1E] font-semibold text-sm md:text-base"
+        className="py-2.5 px-5 rounded-md bg-primary text-[#1A1C1E] font-semibold text-sm md:text-base text-center"
       >
         Регистрация
       </Link>

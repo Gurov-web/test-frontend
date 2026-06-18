@@ -32,7 +32,7 @@ export default function TestPage() {
         const checkIfPassed = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const res = await fetch(`http://localhost:5000/api/tests/my-results`, {
+                const res = await fetch(`https://web-production-00a19.up.railway.app/api/tests/my-results`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 const results = await res.json();
