@@ -8,7 +8,7 @@ export default function NavbarMobile({ isOpen, closeMenu }) {
 
   return (
     <div
-      className={`md:hidden absolute top-full left-0 w-full bg-[#0E0E0E] shadow-2xl shadow-black/20 px-4 py-4 flex flex-col gap-4 transition-all duration-300 ease-in-out z-50 ${
+      className={`lg:hidden absolute top-full left-0 w-full bg-[#0E0E0E] shadow-2xl shadow-black/20 px-4 py-4 flex flex-col gap-4 transition-all duration-300 ease-in-out z-50 ${
         isOpen
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 -translate-y-2 pointer-events-none"

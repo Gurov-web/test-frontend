@@ -13,7 +13,7 @@ export default function Navbar() {
     <header className="px-4 sm:px-6 lg:px-12.5 py-4 bg-[#0E0E0E] shadow-2xl shadow-[#a0ffb910] relative">
       <NavbarDesktop />
 
-      <div className="flex md:hidden items-center justify-between">
+      <div className="flex lg:hidden items-center justify-between">
         <Link to="/" className="text-primary text-2xl font-bold">
           ВВ ГРУПП
         </Link>

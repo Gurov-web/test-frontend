@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import TestForm from "../components/Admin/TestForm";
 import TestCardAdmin from "../components/Admin/TestCardAdmin";
@@ -26,7 +26,7 @@ export default function AdminDashboard() {
     const loadTests = async () => {
         const token = localStorage.getItem("token");
         const res = await axios.get(`${API}/admin/tests`, {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: {Authorization: `Bearer ${token}`},
         });
         setAdminTests(res.data);
     };
@@ -93,7 +93,7 @@ export default function AdminDashboard() {
 
     const handleQuestionChange = (index, field, value) => {
         const newQuestions = [...questions];
-        newQuestions[index] = { ...newQuestions[index], [field]: value };
+        newQuestions[index] = {...newQuestions[index], [field]: value};
         setQuestions(newQuestions);
     };
 
@@ -101,7 +101,7 @@ export default function AdminDashboard() {
         const newQuestions = [...questions];
         const newOptions = [...newQuestions[qIndex].options];
         newOptions[optIndex] = value;
-        newQuestions[qIndex] = { ...newQuestions[qIndex], options: newOptions };
+        newQuestions[qIndex] = {...newQuestions[qIndex], options: newOptions};
         setQuestions(newQuestions);
     };
 
@@ -129,12 +129,12 @@ export default function AdminDashboard() {
         try {
             if (editingTest) {
                 await axios.put(`${API}/admin/tests/${editingTest.id}`, payload, {
-                    headers: { Authorization: `Bearer ${token}` },
+                    headers: {Authorization: `Bearer ${token}`},
                 });
                 alert("Тест обновлён!");
             } else {
                 await axios.post(`${API}/admin/tests`, payload, {
-                    headers: { Authorization: `Bearer ${token}` },
+                    headers: {Authorization: `Bearer ${token}`},
                 });
                 alert("Тест создан!");
             }
@@ -149,7 +149,7 @@ export default function AdminDashboard() {
         if (!confirm("Удалить тест полностью?")) return;
         const token = localStorage.getItem("token");
         await axios.delete(`${API}/admin/tests/${id}`, {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: {Authorization: `Bearer ${token}`},
         });
         loadTests();
     };

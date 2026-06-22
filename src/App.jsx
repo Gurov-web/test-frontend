@@ -15,6 +15,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import Navbar from "./components/layout/Navbar/Navbar";
 import AdminUsers from "./pages/AdminUsers";
 import Footer from "./components/layout/Footer/Footer.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
 
 function PrivateRoute({children, adminOnly = false}) {
     const {user} = useAuthStore();
@@ -34,6 +35,7 @@ function App() {
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/tests" element={<Tests/>}/>
+                        <Route path="/about" element={<AboutPage/>}/>
                         <Route
                             path="/test/:id"
                             element={

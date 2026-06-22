@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useTestStore } from "../store/testStore";
-import { useAuthStore } from "../store/authStore";
+import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import {useTestStore} from "../store/testStore";
+import {useAuthStore} from "../store/authStore";
 import TestForm from "../components/Tests/TestForm";
 import TestResult from "../components/Tests/TestResult";
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export default function TestPage() {
-    const { id } = useParams();
-    const { currentTest, fetchTestById, submitTest } = useTestStore();
-    const { user } = useAuthStore();
+    const {id} = useParams();
+    const {currentTest, fetchTestById, submitTest} = useTestStore();
+    const {user} = useAuthStore();
 
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [submitted, setSubmitted] = useState(false);
@@ -27,7 +27,6 @@ export default function TestPage() {
         setAlreadyPassed(false);
     }, [id]);
 
-    // Проверка, проходил ли пользователь этот тест ранее
     useEffect(() => {
         if (!user || !currentTest) return;
 
@@ -35,7 +34,7 @@ export default function TestPage() {
             try {
                 const token = localStorage.getItem("token");
                 const res = await fetch(`${API}/tests/my-results`, {
-                    headers: { Authorization: `Bearer ${token}` },
+                    headers: {Authorization: `Bearer ${token}`},
                 });
                 const results = await res.json();
 

@@ -9,13 +9,9 @@ const Footer = () => {
             </div>
             <div className="flex flex-wrap gap-5">
                 <a className="hover:text-primary transition-colors font-body-md"
-                   href="#">Политика конфиденциальности</a>
+                   href="https://t.me/lionlion2707" target="_blank">Поддержка</a>
                 <a className="hover:text-primary transition-colors font-body-md"
-                   href="#">Условия использования</a>
-                <a className="hover:text-primary transition-colors font-body-md"
-                   href="#">Поддержка</a>
-                <a className="hover:text-primary transition-colors font-body-md"
-                   href="#">Контакты</a>
+                   href="https://vk.com/yliytsezarnovoross" target="_blank">Контакты</a>
             </div>
         </footer>
     );

@@ -8,7 +8,7 @@ export default function NavbarDesktop() {
   const { user } = useAuthStore();
 
   return (
-    <div className="hidden md:flex items-center justify-between">
+    <div className="hidden lg:flex items-center justify-between">
       <div className="flex items-center gap-16">
         <Link to="/" className="text-primary text-3xl font-bold">
           ВВ ГРУПП
