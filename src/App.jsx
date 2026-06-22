@@ -60,6 +60,7 @@ function App() {
                             }
                         />
                         <Route path="/admin/users" element={<PrivateRoute adminOnly><AdminUsers/></PrivateRoute>}/>
+                        <Route path="*" element={<Navigate to="/" replace />} />
                     </Routes>
                 </div>
                 <Footer/>
